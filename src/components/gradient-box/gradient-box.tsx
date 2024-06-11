@@ -13,23 +13,17 @@ interface Props {
 }
 
 const GradientBox: FC<Props> = ({ GradientProps }) => {
-  const {
-    from = "cyan-500",
-    to = "pink-500",
-    via = "purple-500",
-    direction = "r",
-    thirdColor = false,
-  } = GradientProps;
+  const { from, to, via, direction, thirdColor } = GradientProps;
+  const gradientDirection = direction === "r" ? "r" : "b";
+  const gradientClass = thirdColor
+    ? `from-${from} via-${via} to-${to}`
+    : `from-${from} to-${to}`;
 
-  return (
-    <div
-      className={`h-[300px] w-[300px] bg-gradient-to-${direction} ${
-        thirdColor
-          ? `from-${from} via-${via} to-${to}`
-          : `from-${from} to-${to}`
-      }`}
-    ></div>
-  );
+  const fullClassName = `h-[300px] w-[300px] bg-gradient-to-${gradientDirection} ${gradientClass}`;
+
+  console.log(fullClassName);
+
+  return <div className={fullClassName}>Gradient Box</div>;
 };
 
 export default GradientBox;
