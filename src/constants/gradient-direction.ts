@@ -1,3 +1,5 @@
+
+
 export const Direction=[
     {
         label:'To Top',
@@ -28,7 +30,7 @@ export const Direction=[
         value:'to-l'
     },
     {
-        laebl:'To Top Left',
+        label:'To Top Left',
         value:'to-tl'
     }
 ]
